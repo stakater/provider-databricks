@@ -11,6 +11,13 @@ import (
 	ujconfig "github.com/crossplane/upjet/pkg/config"
 
 	"github.com/stakater/provider-databricks/config/cluster"
+	"github.com/stakater/provider-databricks/config/cluster_policy"
+	"github.com/stakater/provider-databricks/config/instance_pool"
+	"github.com/stakater/provider-databricks/config/job"
+	"github.com/stakater/provider-databricks/config/notebook"
+	"github.com/stakater/provider-databricks/config/secret"
+	"github.com/stakater/provider-databricks/config/secret_scope"
+	"github.com/stakater/provider-databricks/config/token"
 )
 
 const (
@@ -37,6 +44,13 @@ func GetProvider() *ujconfig.Provider {
 	for _, configure := range []func(provider *ujconfig.Provider){
 		// add custom config functions
 		cluster.Configure,
+		cluster_policy.Configure,
+		token.Configure,
+		secret.Configure,
+		secret_scope.Configure,
+		notebook.Configure,
+		job.Configure,
+		instance_pool.Configure,
 	} {
 		configure(pc)
 	}

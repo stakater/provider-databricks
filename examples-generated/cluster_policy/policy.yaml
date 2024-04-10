@@ -1,0 +1,15 @@
+apiVersion: cluster_policy.crossplane.io/v1alpha1
+kind: Policy
+metadata:
+  annotations:
+    meta.upbound.io/example-id: cluster_policy/v1alpha1/policy
+  labels:
+    testing.upbound.io/example-name: fair_use
+  name: fair-use
+spec:
+  forProvider:
+    definition: ${jsonencode(merge(local.default_policy, var.policy_overrides))}
+    libraries:
+    - pypi:
+      - package: databricks-sdk==0.12.0
+    name: ${var.team} cluster policy
