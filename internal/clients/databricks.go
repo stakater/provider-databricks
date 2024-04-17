@@ -26,9 +26,9 @@ const (
 	errExtractCredentials   = "cannot extract credentials"
 	errUnmarshalCredentials = "cannot unmarshal databricks credentials as JSON"
 
-	keyHost = "host"
-	keyAzureWorkspaceResourceId = "azure_workspace_resource_id"
-	keyAzureUseMsi = "azure_use_msi"
+	keyHost                     = "host"
+	keyAzureWorkspaceResourceID = "azure_workspace_resource_id"
+	keyAzureUseMsi              = "azure_use_msi"
 )
 
 // TerraformSetupBuilder builds Terraform a terraform.SetupFn function which
@@ -69,13 +69,13 @@ func TerraformSetupBuilder(version, providerSource, providerVersion string) terr
 		// Set credentials in Terraform provider configuration.
 		ps.Configuration = map[string]any{}
 		if v, ok := creds[keyHost]; ok {
-		  ps.Configuration[keyHost] = v
+			ps.Configuration[keyHost] = v
 		}
-		if v, ok := creds[keyAzureWorkspaceResourceId]; ok {
-		  ps.Configuration[keyAzureWorkspaceResourceId] = v
+		if v, ok := creds[keyAzureWorkspaceResourceID]; ok {
+			ps.Configuration[keyAzureWorkspaceResourceID] = v
 		}
 		if v, ok := creds[keyAzureUseMsi]; ok {
-		  ps.Configuration[keyAzureUseMsi] = v
+			ps.Configuration[keyAzureUseMsi] = v
 		}
 		return ps, nil
 	}
