@@ -1,6 +1,6 @@
-module github.com/upbound/upjet-provider-template
+module github.com/stakater/provider-databricks
 
-go 1.19
+go 1.21
 
 require (
 	github.com/crossplane/crossplane-runtime v1.14.0-rc.0.0.20231011070344-cc691421c2e5

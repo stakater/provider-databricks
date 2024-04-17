@@ -10,7 +10,14 @@ import "github.com/crossplane/upjet/pkg/config"
 // provider.
 var ExternalNameConfigs = map[string]config.ExternalName{
 	// Import requires using a randomly generated ID from provider: nl-2e21sda
-	"null_resource": config.IdentifierFromProvider,
+	"databricks_cluster":        config.IdentifierFromProvider,
+	"databricks_cluster_policy": config.IdentifierFromProvider,
+	"databricks_token":          config.IdentifierFromProvider,
+	"databricks_secret":         config.IdentifierFromProvider,
+	"databricks_secret_scope":   config.IdentifierFromProvider,
+	"databricks_notebook":       config.IdentifierFromProvider,
+	"databricks_job":            config.IdentifierFromProvider,
+	"databricks_instance_pool":  config.IdentifierFromProvider,
 }
 
 // ExternalNameConfigurations applies all external name configs listed in the
