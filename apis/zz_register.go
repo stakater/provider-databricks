@@ -14,14 +14,7 @@ package apis
 import (
 	"k8s.io/apimachinery/pkg/runtime"
 
-	v1alpha1 "github.com/stakater/provider-databricks/apis/cluster/v1alpha1"
-	v1alpha1cluster_policy "github.com/stakater/provider-databricks/apis/cluster_policy/v1alpha1"
-	v1alpha1instance_pool "github.com/stakater/provider-databricks/apis/instance_pool/v1alpha1"
-	v1alpha1job "github.com/stakater/provider-databricks/apis/job/v1alpha1"
-	v1alpha1notebook "github.com/stakater/provider-databricks/apis/notebook/v1alpha1"
-	v1alpha1secret "github.com/stakater/provider-databricks/apis/secret/v1alpha1"
-	v1alpha1secret_scope "github.com/stakater/provider-databricks/apis/secret_scope/v1alpha1"
-	v1alpha1token "github.com/stakater/provider-databricks/apis/token/v1alpha1"
+	v1alpha1 "github.com/stakater/provider-databricks/apis/databricks/v1alpha1"
 	v1alpha1apis "github.com/stakater/provider-databricks/apis/v1alpha1"
 	v1beta1 "github.com/stakater/provider-databricks/apis/v1beta1"
 )
@@ -30,13 +23,6 @@ func init() {
 	// Register the types with the Scheme so the components can map objects to GroupVersionKinds and back
 	AddToSchemes = append(AddToSchemes,
 		v1alpha1.SchemeBuilder.AddToScheme,
-		v1alpha1cluster_policy.SchemeBuilder.AddToScheme,
-		v1alpha1instance_pool.SchemeBuilder.AddToScheme,
-		v1alpha1job.SchemeBuilder.AddToScheme,
-		v1alpha1notebook.SchemeBuilder.AddToScheme,
-		v1alpha1secret.SchemeBuilder.AddToScheme,
-		v1alpha1secret_scope.SchemeBuilder.AddToScheme,
-		v1alpha1token.SchemeBuilder.AddToScheme,
 		v1alpha1apis.SchemeBuilder.AddToScheme,
 		v1beta1.SchemeBuilder.AddToScheme,
 	)
